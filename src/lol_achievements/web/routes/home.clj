@@ -1,5 +1,5 @@
-(ns lol-achievements.routes.home
-  (:require [lol-achievements.layout :as layout]
+(ns lol-achievements.web.routes.home
+  (:require [lol-achievements.web.layout :as layout]
             [compojure.core :refer [defroutes GET]]
             [ring.util.http-response :refer [ok]]
             [clojure.java.io :as io]))
@@ -14,4 +14,3 @@
 (defroutes home-routes
   (GET "/" [] (home-page))
   (GET "/about" [] (about-page)))
-

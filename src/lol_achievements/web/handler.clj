@@ -1,8 +1,8 @@
-(ns lol-achievements.handler
+(ns lol-achievements.web.handler
   (:require [compojure.core :refer [defroutes routes wrap-routes]]
-            [lol-achievements.layout :refer [error-page]]
-            [lol-achievements.routes.home :refer [home-routes]]
-            [lol-achievements.middleware :as middleware]
+            [lol-achievements.web.layout :refer [error-page]]
+            [lol-achievements.web.routes.home :refer [home-routes]]
+            [lol-achievements.web.middleware :as middleware]
             [compojure.route :as route]
             [taoensso.timbre :as timbre]
             [taoensso.timbre.appenders.3rd-party.rotor :as rotor]

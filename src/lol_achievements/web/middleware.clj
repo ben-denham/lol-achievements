@@ -1,5 +1,5 @@
-(ns lol-achievements.middleware
-  (:require [lol-achievements.layout :refer [*app-context* error-page]]
+(ns lol-achievements.web.middleware
+  (:require [lol-achievements.web.layout :refer [*app-context* error-page]]
             [taoensso.timbre :as timbre]
             [environ.core :refer [env]]
             [selmer.middleware :refer [wrap-error-page]]

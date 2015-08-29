@@ -1,4 +1,4 @@
-(ns lol-achievements.layout
+(ns lol-achievements.web.layout
   (:require [selmer.parser :as parser]
             [selmer.filters :as filters]
             [markdown.core :refer [md-to-html-string]]
