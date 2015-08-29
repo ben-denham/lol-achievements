@@ -22,7 +22,9 @@
                  [org.clojure/tools.nrepl "0.2.10"]
                  [org.webjars/bootstrap "3.3.5"]
                  [org.webjars/jquery "2.1.4"]
-                 [org.immutant/web "2.0.2"]]
+                 [org.immutant/web "2.0.2"]
+                 [com.taoensso/carmine "2.11.1"]
+                 [com.novemberain/langohr "3.3.0"]]
 
   :min-lein-version "2.0.0"
   :uberjar-name "lol-achievements.jar"
@@ -40,8 +42,8 @@
    :project/dev  {:dependencies [[ring/ring-mock "0.2.0"]
                                  [ring/ring-devel "1.4.0"]
                                  [pjstadig/humane-test-output "0.7.0"]]
-                  
-                  
+
+
                   :repl-options {:init-ns lol-achievements.core}
                   :injections [(require 'pjstadig.humane-test-output)
                                (pjstadig.humane-test-output/activate!)]
