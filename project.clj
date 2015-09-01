@@ -24,7 +24,8 @@
                  [org.webjars/jquery "2.1.4"]
                  [org.immutant/web "2.0.2"]
                  [com.taoensso/carmine "2.11.1"]
-                 [com.novemberain/langohr "3.3.0"]]
+                 [com.novemberain/langohr "3.3.0"]
+                 [clj-http "2.0.0"]]
 
   :min-lein-version "2.0.0"
   :uberjar-name "lol-achievements.jar"
