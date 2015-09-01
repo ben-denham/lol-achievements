@@ -2,6 +2,7 @@
   (:require [compojure.core :refer [defroutes routes wrap-routes]]
             [lol-achievements.web.layout :refer [error-page]]
             [lol-achievements.web.routes.home :refer [home-routes]]
+            [lol-achievements.web.routes.player :refer [player-routes]]
             [lol-achievements.web.middleware :as middleware]
             [compojure.route :as route]
             [taoensso.timbre :as timbre]
@@ -38,10 +39,12 @@
 
 (def app-routes
   (routes
-    (wrap-routes #'home-routes middleware/wrap-csrf)
-    (route/not-found
-      (:body
-        (error-page {:status 404
-                     :title "page not found"})))))
+   (wrap-routes (routes
+                 #'home-routes
+                 #'player-routes) middleware/wrap-csrf)
+   (route/not-found
+    (:body
+     (error-page {:status 404
+                  :title "page not found"})))))
 
 (def app (middleware/wrap-base #'app-routes))
