@@ -11,4 +11,7 @@ web:
 redis:
   image: redis
 rabbitmq:
-  image: rabbitmq
+  image: rabbitmq:3-management
+  hostname: rabbitmq
+  ports:
+    - "15672:15672"
