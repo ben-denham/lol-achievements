@@ -4,6 +4,7 @@
   :url "http://example.com/FIXME"
 
   :dependencies [[org.clojure/clojure "1.7.0"]
+                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]
                  [selmer "0.9.0"]
                  [com.taoensso/timbre "4.1.1"]
                  [com.taoensso/tower "3.0.2"]
@@ -35,11 +36,17 @@
 
   :plugins [[lein-environ "1.0.0"]]
   :profiles
-  {:uberjar {:omit-source true
-             :env {:production true}
-             :aot :all}
-   :dev           [:project/dev :profiles/dev]
-   :test          [:project/test :profiles/test]
+  {:uberjar       [:project/base :project/uberjar]
+   :dev           [:project/base :project/dev :profiles/dev]
+   :test          [:project/base :project/test :profiles/test]
+   :project/base {:env {:riot-api-config
+                        {:api-url "https://oce.api.pvp.net/"
+                         :region "oce"
+                         :requests-per-minute 50
+                         :workers-count 1}}}
+   :project/uberjar {:omit-source true
+                     :env {:production true}
+                     :aot :all}
    :project/dev  {:dependencies [[ring/ring-mock "0.2.0"]
                                  [ring/ring-devel "1.4.0"]
                                  [pjstadig/humane-test-output "0.7.0"]]
