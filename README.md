@@ -9,6 +9,11 @@ You will need [Leiningen][1] 2.0 or above installed.
 
 [1]: https://github.com/technomancy/leiningen
 
+## Setup
+
+Copy ``profiles.example.clj`` to ``profiles.clj``, and update values
+in it as necessary (such as the private Riot API key).
+
 ## Running
 
 To start a web server for the application, run:
