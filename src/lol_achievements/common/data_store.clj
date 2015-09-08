@@ -13,7 +13,9 @@
 (defmacro wcar* [& body] `(car/wcar redis-conn ~@body))
 
 (defn get-player-data [name]
+  "Get the player data stored in Redis for a given player name."
   (wcar* (car/get name)))
 
 (defn set-player-data [name data]
+  "Set the player data stored in Redis for a given player name."
   (wcar* (car/set name data)))
